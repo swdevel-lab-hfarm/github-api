@@ -1,7 +1,6 @@
 import argparse
 import csv
 from github import get_events
-valid_usernames = ['swdevel-lab-hfarm', 'swdevel-lab-h-farm-2019']
 default_datafile = 'data/allowed_repos.csv'
 
 def parse_allowed_repos(datafile=default_datafile):
