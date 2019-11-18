@@ -5,7 +5,7 @@ In this repository you can find a file named ```github.py``` that implements the
 
 ```
 $ python3 main.py 
-18
+Repository "example" from user "swdevel-lab-hfarm" has 18 events.
 ```
 
 

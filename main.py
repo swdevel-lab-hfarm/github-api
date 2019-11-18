@@ -4,4 +4,4 @@ user = 'swdevel-lab-hfarm'
 repo = 'example'
 
 ev = get_events(user, repo)
-print(ev)
+print('Repository "{}" from user "{}" has {} events.'.format(repo, user, ev))
