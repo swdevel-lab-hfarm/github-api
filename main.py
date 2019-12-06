@@ -3,15 +3,19 @@ import csv
 from github import get_events
 default_datafile = 'data/allowed_repos.csv'
 
+
 def parse_allowed_repos(datafile=default_datafile):
     usernames = set()
     repositories = set()
-    with open(datafile) as repo_data:
-        csv_reader = csv.reader(repo_data, delimiter=',')
-        next(csv_reader)
-        for row in csv_reader:
-            usernames.add(row[0])
-            repositories.add(row[1])
+    try:
+        with open(datafile) as repo_data:
+            csv_reader = csv.reader(repo_data, delimiter=',')
+            next(csv_reader)
+            for row in csv_reader:
+                usernames.add(row[0])
+                repositories.add(row[1])
+    except FileNotFoundError:
+        pass
     return usernames, repositories
 
 
