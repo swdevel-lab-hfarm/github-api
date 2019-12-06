@@ -10,7 +10,10 @@ def parse_allowed_repos(datafile=default_datafile):
     try:
         with open(datafile) as repo_data:
             csv_reader = csv.reader(repo_data, delimiter=',')
-            next(csv_reader)
+            try:
+                next(csv_reader)
+            except StopIteration:
+                return usernames, repositories
             for row in csv_reader:
                 usernames.add(row[0])
                 repositories.add(row[1])
