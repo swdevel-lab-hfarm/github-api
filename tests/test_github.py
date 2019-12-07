@@ -16,6 +16,11 @@ class TestGithub(unittest.TestCase):
         res = github.get_events("swdevel-lab-hfarm", "birthdays")
         self.assertFalse(res)
 
+    def test_correct_repo(self):
+        res = github.get_events("swdevel-lab-h-farm-2019", "birthdays")
+        self.assertTrue(res)
+
+
 
 class TestAnalyser(unittest.TestCase):
 
