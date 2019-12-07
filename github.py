@@ -30,7 +30,10 @@ def analyse_events(event_list):
     for w in events_time:
         if w < 30:
             last_month_events += 1
-    return non_owner_events/tot_events, last_month_events/tot_events
+    if tot_events:
+        return non_owner_events/tot_events, last_month_events/tot_events
+    else:
+        return 0, 0
 
 
 def get_events(user, repo, verbose=False):
