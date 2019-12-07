@@ -17,7 +17,8 @@ class TestGithub(unittest.TestCase):
         self.assertFalse(res)
 
     def test_correct_repo(self):
-        res = github.get_events("swdevel-lab-h-farm-2019", "birthdays")
+        res = github.get_events("swdevel-lab-h-farm-2019", "birthdays",
+                                verbose=True)
         self.assertTrue(res)
 
 
